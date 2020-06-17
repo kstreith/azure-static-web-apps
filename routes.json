@@ -1,0 +1,32 @@
+{
+    "routes": [
+      {
+        "route": "/admin/*",
+        "allowedRoles": ["authenticated"]
+      },
+      {
+        "route": "/login",
+        "serve": "/.auth/login/github"
+      },
+      {
+        "route": "/logout",
+        "serve": "/.auth/logout"
+      },
+      {
+        "route": "/specials",
+        "serve": "/index.html",
+        "statusCode": 301
+      }
+    ],
+    "platformErrorOverrides": [
+      {
+        "errorType": "NotFound",
+        "serve": "/custom-404.html"
+      },
+      {
+        "errorType": "Unauthenticated",
+        "statusCode": "302",
+        "serve": "/login"
+      }
+    ]
+  }
