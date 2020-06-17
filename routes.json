@@ -5,6 +5,10 @@
         "allowedRoles": ["authenticated"]
       },
       {
+          "route": "/editor/*",
+          "allowedRoles": ["editor"]
+      },
+      {
         "route": "/login",
         "serve": "/.auth/login/github"
       },
